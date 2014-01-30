@@ -50,8 +50,8 @@ $i = 0;
                     <tr>
                         <td class="number"><?php printf("%'02d", ++ $i); ?></td>
                         <td class="time"><?php printf("%-9s", $row['time']); ?></td>
-                        <td class="level"><?php html(printf("%-9s", '[' . $row['level'] . ']')); ?></td>
-                        <td class="category"><?php html(printf("%-9s", $row['ctg'])); ?></td>
+                        <td class="level"><?php htmlspecialchars(printf("%-9s", '[' . $row['level'] . ']')); ?></td>
+                        <td class="category"><?php htmlspecialchars(printf("%-9s", $row['ctg'])); ?></td>
                         <td class="message"><?php echo $row['msg']; ?></td>
                     </tr>
                 <?php } ?>
