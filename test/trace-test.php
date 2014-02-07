@@ -2,8 +2,8 @@
 /**
  * trace-test.php file
  *
- * @author     Dmitryi Tyurin <fobia3d@gmail.com>
- * @copyright  Copyright (c) 2014 Dmitryi Tyurin
+ * @author     Dmitriy Tyurin <fobia3d@gmail.com>
+ * @copyright  Copyright (c) 2014 Dmitriy Tyurin
  */
 
 require_once __DIR__.'/bootstrap.php';
