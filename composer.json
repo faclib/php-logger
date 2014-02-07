@@ -1,9 +1,9 @@
 {
     "name": "php-utils/logger",
-    "description": "Logger.",
+    "description": "Mini logger.",
     "authors": [
         {
-            "name": "Tyurin D",
+            "name": "Dmitriy Tyurin",
             "email": "fobia3d@gmail.com"
         }
     ],

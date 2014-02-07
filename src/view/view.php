@@ -2,8 +2,8 @@
 /**
  * view.php file
  *
- * @author     Tyurin D. <fobia3d@gmail.com>
- * @copyright  (c) 2013, AC
+ * @author     Dmitriy Tyurin <fobia3d@gmail.com>
+ * @copyright  (c) 2013, Dmitriy Tyurin
  */
 
 $i = 0;
