@@ -10,8 +10,6 @@
 
 /**
  * Log class
- *
- * @package		AC
  */
 class Log
 {
@@ -19,6 +17,13 @@ class Log
     private static $_messages;
     public static $enable = false;
 
+    /**
+     * Добавить лог сообщения
+     * @staticvar null $time_start
+     * @param string $message
+     * @param string $category
+     * @param string $level
+     */
     public static function trace($message, $category = 'Log', $level = 'trace')
     {
         static $time_start = null;
@@ -45,6 +50,11 @@ class Log
         );
     }
 
+    /**
+     * Дамп переменой в лог
+     * @param mixed $object
+     * @param string $name
+     */
     public static function dump($object, $name = null)
     {
         if ( ! self::$enable) {
@@ -58,11 +68,21 @@ class Log
         self::trace($message, 'dump');
     }
 
+    /**
+     *
+     * @param type $message
+     * @param type $category
+     */
     public static function error($message, $category = 'Log')
     {
         self::trace($message, $category, 'error');
     }
 
+    /**
+     * Check enable
+     * @param bool $check
+     * @return bool
+     */
     public static function enable($check = null)
     {
         if (func_num_args() == 0) {
@@ -71,11 +91,20 @@ class Log
         self::$enable = (bool) $check;
     }
 
+    /**
+     * Масив логов
+     * @return array
+     */
     public static function getLogs()
     {
         return self::$_messages;
     }
 
+    /**
+     * Вывести логи (печать)
+     * @param bool $print печатать
+     * @return string
+     */
     public static function render($print = true)
     {
         if ( ! self::$enable) {

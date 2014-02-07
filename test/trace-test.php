@@ -12,6 +12,6 @@ Log::enable(true);
 
 Log::trace("This is firs trace.");
 Log::error("Error message");
-Log::dump($_SERVER);
+//Log::dump($_SERVER);
 
 Log::render();
