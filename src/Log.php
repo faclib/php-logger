@@ -14,7 +14,7 @@
 class Log
 {
 
-    private static $_messages;
+    private static $_messages = array();
     public static $enable = false;
 
     /**
@@ -24,7 +24,7 @@ class Log
      * @param string $category
      * @param string $level
      */
-    public static function trace($message, $category = 'Log', $level = 'trace')
+    public static function trace($message, $category = 'log', $level = 'trace')
     {
         static $time_start = null;
         if ( ! self::$enable) {
@@ -60,10 +60,19 @@ class Log
         if ( ! self::$enable) {
             return;
         }
-
         ob_start();
-        var_dump($object);
-        $message = '<b>' . $name . '::</b>' . ob_get_contents();
+        if(!ini_get('xdebug.coverage_enable')) {
+            if (!isset($_SERVER['HTTP_HOST'])) {
+                print_r($object);
+            } else {
+                CVarDumper::dump($object);
+                $name = '<b>' . $name . '::</b>';
+            }
+        } else {
+            var_dump($object);
+            $name = '<b>' . $name . '::</b>';
+        }
+        $message = $name  . ob_get_contents();
         ob_end_clean();
         self::trace($message, 'dump');
     }
@@ -73,7 +82,7 @@ class Log
      * @param type $message
      * @param type $category
      */
-    public static function error($message, $category = 'Log')
+    public static function error($message, $category = 'log')
     {
         self::trace($message, $category, 'error');
     }
@@ -125,7 +134,6 @@ class Log
                 echo $row['msg'] . "\n";
             }
         } else {
-
             include 'view/view.php';
         }
 

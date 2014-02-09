@@ -24,8 +24,9 @@ $i = 0;
     #ac-logger  tr.error { background: rgb(255, 179, 179);  }
 </style>
 <script type="text/javascript">
+console.log(jQuery);
     $(document).ready(function() {
-        $("#ac-logger").resizable();
+        //$("#ac-logger").resizable();
         $("#ac-logger-switch").click(function() {
             $("#ac-logger").toggleClass("hidden");
         });
