@@ -1,0 +1,34 @@
+.fac-logger {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1000000;
+    font: 9px Tahoma, Geneva, sans-serif;
+    border-bottom: 3px solid black;
+    height: 60%;
+    width: 80%;
+
+    .content {
+        background: #CCC;
+        overflow: auto;
+        width: 100%;
+        height: 100%;
+    }
+
+    thead {
+        background: #999;
+        tr td { vertical-align: top; text-align: left; }
+        tr th { vertical-align: top; white-space: pre; font-weight: bold; text-align: left; }
+    }
+    tr {
+        font-family: monospace; font-size: 11px;
+
+        .number { color: #888a85; }
+        .time { color: #f57900; }
+        .category { color: #4e9a06; }
+        .level { color: #3465a4; }
+        .messag { color: #888a85; }
+    }
+
+    tr.error { background: rgb(255, 179, 179);  }
+}
