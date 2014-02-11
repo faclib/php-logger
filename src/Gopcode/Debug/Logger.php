@@ -6,12 +6,12 @@
  * @copyright  (c) 2013, Dmitriy Tyurin
  */
 
-
+namespace Gopcode\Debug;
 
 /**
  * Log class
  */
-class Log
+class Logger
 {
 
     private static $_messages = array();
@@ -127,9 +127,9 @@ class Log
         $i = 0;
         if ( ! isset($_SERVER['HTTP_HOST'])) {
             foreach ($Logs as $row) {
-                printf("%'02d", ++ $i);
+                // printf("%'02d", ++ $i);
                 printf("%-9s", $row['time']);
-                printf("%-9s", '[' . $row['level'] . ']');
+                printf("%-9s", ' [' . $row['level'] . ']');
                 printf("%-9s", $row['ctg']);
                 echo $row['msg'] . "\n";
             }

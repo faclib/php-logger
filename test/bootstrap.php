@@ -2,7 +2,7 @@
 /**
  * @author Dmitriy Tyurin <fobia3d@gmail.com>
  */
-require_once dirname(__DIR__).'/src/Log.php';
+//require_once dirname(__DIR__).'/src/Log.php';
 
 $autoloadFile = __DIR__ . '/../vendor/autoload.php';
 if (!file_exists($autoloadFile)) {

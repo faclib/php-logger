@@ -7,11 +7,16 @@
  */
 
 require_once __DIR__.'/bootstrap.php';
+use \Gopcode\Debug\Logger as Log;
 
-Log::enable(true);
+\Gopcode\Debug\Config::enable(true);
+\Gopcode\Debug\Config::register();
+
 
 Log::trace("This is firs trace.");
-Log::error("Error message");
+DLog::error("Error message");
 //Log::dump($_SERVER);
 
-Log::render();
+
+
+//DLog::render();
