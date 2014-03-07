@@ -6,7 +6,7 @@
  * @copyright  (c) 2013, Dmitriy Tyurin
  */
 
-
+namespace Fac\Dbg;
 
 /**
  * Log class

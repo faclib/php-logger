@@ -6,9 +6,7 @@
         "monolog/monolog": "~1.6"
     },
     "autoload": {
-        "psr-0": {
-            "": "src"
-        }
+         "files": ["src/Log.php"]
     },
     "extra": {
         "branch-alias": {
