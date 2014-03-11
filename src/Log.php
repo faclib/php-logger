@@ -65,7 +65,7 @@ class Log
             if (!isset($_SERVER['HTTP_HOST'])) {
                 print_r($object);
             } else {
-                CVarDumper::dump($object);
+                \CVarDumper::dump($object);
                 $name = '<b>' . $name . '::</b>';
             }
         } else {
