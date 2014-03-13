@@ -45,7 +45,7 @@ class Log
         self::$_messages[] = array(
             'msg'   => $message,
             'ctg'   => $category,
-            'level' => $level,
+            'level' => strtoupper($level),
             'time'  => sprintf(" %01.6f", microtime(true) - $time_start)
         );
     }
@@ -64,10 +64,11 @@ class Log
         if(!ini_get('xdebug.coverage_enable')) {
             if (!isset($_SERVER['HTTP_HOST'])) {
                 print_r($object);
-            } else {
-                \CVarDumper::dump($object);
-                $name = '<b>' . $name . '::</b>';
-            }
+            } 
+            // else {
+            //     \CVarDumper::dump($object);
+            //     $name = '<b>' . $name . '::</b>';
+            // }
         } else {
             var_dump($object);
             $name = '<b>' . $name . '::</b>';
@@ -127,11 +128,7 @@ class Log
         $i = 0;
         if ( ! isset($_SERVER['HTTP_HOST'])) {
             foreach ($Logs as $row) {
-                printf("%'02d", ++ $i);
-                printf("%-9s", $row['time']);
-                printf("%-9s", ' [' . $row['level'] . ']');
-                printf("%-9s", $row['ctg']);
-                echo $row['msg'] . "\n";
+                printf("%'02d %-9s [%s] %s: %s\n", ++ $i, $row['time'], $row['level'], $row['ctg'], $row['msg']);  
             }
         } else {
             include 'view/view.php';

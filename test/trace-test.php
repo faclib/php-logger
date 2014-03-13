@@ -8,10 +8,13 @@
 
 require_once __DIR__.'/bootstrap.php';
 
-Log::enable(true);
 
-Log::trace("This is firs trace.");
-Log::error("Error message");
+
+Fac\Dbg\Log::enable(true);
+
+Fac\Dbg\Log::trace("This is firs trace");
+Fac\Dbg\Log::error("Error message");
+Fac\Dbg\Log::dump("Error message");
 //Log::dump($_SERVER);
 
-Log::render();
+Fac\Dbg\Log::render();
