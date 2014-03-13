@@ -3,7 +3,7 @@
  * Log class  - Log.php file
  *
  * @author     Dmitriy Tyurin <fobia3d@gmail.com>
- * @copyright  (c) 2013, Dmitriy Tyurin
+ * @copyright  (c) 2013-2014, Dmitriy Tyurin
  */
 
 namespace Fac\Dbg;
@@ -129,7 +129,7 @@ class Log
             foreach ($Logs as $row) {
                 printf("%'02d", ++ $i);
                 printf("%-9s", $row['time']);
-                printf("%-9s", '[' . $row['level'] . ']');
+                printf("%-9s", ' [' . $row['level'] . ']');
                 printf("%-9s", $row['ctg']);
                 echo $row['msg'] . "\n";
             }

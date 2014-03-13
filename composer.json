@@ -1,12 +1,13 @@
 {
     "name": "faclib/logger",
     "description": "Mini logger.",
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.0",
-        "monolog/monolog": "~1.6"
+        "psr/log": "1.*"
     },
     "autoload": {
-         "files": ["src/Log.php"]
+         "files": [ "src/Log.php" ]
     },
     "extra": {
         "branch-alias": {
